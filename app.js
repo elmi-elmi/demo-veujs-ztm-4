@@ -1,13 +1,16 @@
 const vm = Vue.createApp({
     data() {
         return {
-            firstName: 'Shahrokh', lastName: 'Elmi', url: 'https://google.com',
-            raw_html: '<a href="https://google.com" target="_blank">Google</a>', age: 20
+            firstName: 'Shahrokh',
+            lastName: 'Elmi',
+            url: 'https://google.com',
+            raw_html: '<a href="https://google.com" target="_blank">Google</a>',
+            age: 20, middleName: ''
         }
     },
     methods: {
         fullName() {
-            return `${this.firstName} ${this.lastName.toUpperCase()}`
+            return `${this.firstName} ${this.middleName} ${this.lastName.toUpperCase()}`
         },
 
         decrease() {
@@ -17,6 +20,9 @@ const vm = Vue.createApp({
             // event.preventDefault();
             console.log(msg)
             this.lastName = event.target.value
+        },
+        updateMiddleName(event) {
+            this.middleName = event.target.value
         }
 
     }

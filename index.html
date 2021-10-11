@@ -16,11 +16,12 @@
 
     <label for="firstName">first name</label>
     <input type="text" v-model="firstName">
-
+    <label for="">Middle name</label>
+    <input type="text" @keyup.enter="updateMiddleName">
     <label for="lastName">last name</label>
-    <input type="text" :value="lastName" @input="updateLastName($event, 'last name event triggered!')">
+    <input type="text" :value="lastName" @input.prevent="updateLastName($event, 'last name event triggered!')">
     <hr>
-    <button @click='decrease'>decrease</button>
+    <button @click.ctrl='decrease'>decrease</button>
     <button @click="age++">increase</button>
 
 
