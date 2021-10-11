@@ -1,11 +1,22 @@
 const vm = Vue.createApp({
     data() {
-        return { firstName: 'Shahrokh', lastName: 'Elmi', url: 'https://google.com' }
+        return {
+            firstName: 'Shahrokh', lastName: 'Elmi', url: 'https://google.com',
+            raw_html: '<a href="https://google.com" target="_blank">Google</a>', age: 20
+        }
     },
     methods: {
         fullName() {
             return `${this.firstName} ${this.lastName.toUpperCase()}`
+        },
+
+        decrease() {
+            this.age--
+        },
+        updateLastName(event) {
+            this.lastName = event.target.value
         }
+
     }
 }).mount('#app');
 
